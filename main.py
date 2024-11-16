@@ -1,6 +1,11 @@
 import string
+import sys
+
+# give name of text file in the books folder at execution
+text_name = sys.argv[1]
 
 def get_char_count(content):
+    # alphabatize dictionary first for later output
     char_count = {}
     alphabet = string.ascii_lowercase
     for letter in alphabet:
@@ -16,14 +21,14 @@ def get_word_count(content):
     return len(words)
 
 def main():
-    with open('books/frankenstein.txt') as f:
-        contents = f.read()
-        word_count = get_word_count(contents)
-        char_count = get_char_count(contents)
-        print("Book report: ")
-        print(f"{word_count} words in this book.")
+    with open(f'books/{text_name}.txt') as f:
+        content = f.read()
+        word_count = get_word_count(content)
+        char_count = get_char_count(content)
+        print(f"Report on {text_name}:")
+        print(f"{word_count} words in this piece of text.\n")
         for letter in char_count:
             print(f"The {letter} character was found {char_count[letter]} times.")
-        print("End report.")
+        print("\nEnd report.")
 
 main()
