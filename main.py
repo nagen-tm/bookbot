@@ -11,7 +11,7 @@ def main():
         word_count = get_num_words(content)
         char_count = get_char_count(content)
         print(f"Report on {text_name}:")
-        print(f"{word_count} words in this piece of text.\n")
+        print(f"{word_count} words found in the document.\n")
         for letter in char_count:
             print(f"The {letter} character was found {char_count[letter]} times.")
         print("\nEnd report.")
